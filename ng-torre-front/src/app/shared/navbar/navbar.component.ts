@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
-import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
+import { ROUTES } from 'app/shared/enums/routes'
 
 @Component({
     selector: 'app-navbar',
@@ -9,16 +11,31 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
+    showLoginProfile: boolean = true;
     login: boolean = false;
 
-    constructor(public location: Location, private element : ElementRef) {
+    constructor(public location: Location, private element : ElementRef, private router: Router) {
         this.sidebarVisible = false;
     }
 
     ngOnInit() {
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+        this.checkLoginPage()
     }
+
+    ngAfterViewChecked() {
+        
+    }
+
+    checkLoginPage() {
+        if(this.router.url == ROUTES.login){
+            this.showLoginProfile = false
+        } else {
+            this.showLoginProfile = true
+        }
+    } 
+
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const html = document.getElementsByTagName('html')[0];
@@ -37,22 +54,24 @@ export class NavbarComponent implements OnInit {
         html.classList.remove('nav-open');
     };
     sidebarToggle() {
-        // const toggleButton = this.toggleButton;
-        // const body = document.getElementsByTagName('body')[0];
         if (this.sidebarVisible === false) {
             this.sidebarOpen();
         } else {
             this.sidebarClose();
         }
     };
-  
-    isDocumentation() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-        if( titlee === '/documentation' ) {
-            return true;
-        }
-        else {
-            return false;
+
+    indexPressed() {
+        this.showLoginProfile = true;
+        this.router.navigate([ROUTES.index]);
+    }
+
+    loginProfileButtonPressed() {
+        this.showLoginProfile = false;
+        if (this.login) {
+
+        } else {
+            this.router.navigate([ROUTES.login]);
         }
     }
 }
