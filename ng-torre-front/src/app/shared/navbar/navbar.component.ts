@@ -74,4 +74,8 @@ export class NavbarComponent implements OnInit {
             this.router.navigate([ROUTES.login]);
         }
     }
+
+    postOpportunity() {
+        this.router.navigate([ROUTES.posting]);
+    }
 }
