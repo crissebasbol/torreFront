@@ -2,7 +2,8 @@
   <div class="container">
     <div class="navbar-translate">
       <a class="navbar-brand" (click)="indexPressed()" placement="bottom">
-        SHOAL TANK
+        <img src="assets/img/logo.png" class="shoal-logo" />
+        HOAL TANK
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation"
@@ -21,7 +22,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">
+          <a class="nav-link" (click)="findOpportunity()">
             <i class="now-ui-icons ui-1_zoom-bold"></i>
             <p>Find opportunity</p>
           </a>

@@ -4,13 +4,16 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './modules/login/login.component';
 import { PostingComponent } from './modules/posting/posting.component';
+import { ListOpportunities } from './modules/list.opportunities/list.opportunities.component';
 import { ComponentsComponent } from './components/components.component';
+import { ROUTES } from './shared/enums/routes'
 
 const routes: Routes =[
     { path: '', redirectTo: 'index', pathMatch: 'full' },
-    { path: 'index',                component: ComponentsComponent },
-    { path: 'login',                component: LoginComponent },
-    { path: 'posting',                component: PostingComponent }
+    { path: ROUTES.index, component: ComponentsComponent },
+    { path: ROUTES.login, component: LoginComponent },
+    { path: ROUTES.posting, component: PostingComponent },
+    { path: ROUTES.listOpportunities, component: ListOpportunities }
 ];
 
 @NgModule({

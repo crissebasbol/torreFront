@@ -460,6 +460,12 @@
     position: relative;
 }
 
+.shoal-logo {
+    max-width: 25px;
+    top: -2px;
+    position: relative;
+}
+
 .creative-tim-logo {
     max-width: 140px;
     top: -2px;
