@@ -8,11 +8,11 @@ ARG conf
 ENV config=${conf}
 
 RUN npm install >/dev/null
-RUN npm run build -- --configuration=${config}
+RUN npm run build --prod
 
 FROM nginx:1.13.9-alpine
 
-COPY --from=build-env /app/dist/* /usr/share/nginx/html
+COPY --from=build-env /app/dist/ /usr/share/nginx/html
 
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 

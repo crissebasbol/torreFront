@@ -7,6 +7,7 @@ SERVICE_ROUTE=$SERVICE_ROUTE_ENV
 BRANCH_NAME=$BRANCH_NAME_ENV
 SERVER=$SERVER_DEPLOYMENT
 GIT_FECTH=$GIT_FETCH_ENV
+INTERN_PORT=$INTERN_PORT
 PORT=$PORT
 
 cd $SERVICE_ROUTE
@@ -57,11 +58,11 @@ then
     		echo "$IMAGE_NAME not exists"
 	fi
 
-    sudo docker build --build-arg conf=$CONF_FRONT -t $IMAGE_NAME .
+    sudo docker build -t $IMAGE_NAME .
 
     echo "Running service $SERVICE_NAME ..."
     sudo docker run -d \
-        -p $PORT:$PORT \
+        -p $PORT:$INTERN_PORT \
         --name $SERVICE_NAME \
         $IMAGE_NAME
     
