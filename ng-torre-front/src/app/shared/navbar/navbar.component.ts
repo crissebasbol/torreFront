@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
     }
 
     checkLoginPage() {
-        if(this.router.url == ROUTES.login){
+        if(this.router.url == "/"+ROUTES.login){
             this.showLoginProfile = false
         } else {
             this.showLoginProfile = true
@@ -77,5 +77,9 @@ export class NavbarComponent implements OnInit {
 
     postOpportunity() {
         this.router.navigate([ROUTES.posting]);
+    }
+
+    findOpportunity() {
+        this.router.navigate([ROUTES.listOpportunities]);
     }
 }

@@ -65,4 +65,8 @@ export class ComponentsComponent implements OnInit, OnDestroy {
     postOpportunity() {
         this.router.navigate([ROUTES.posting]);
     }
+
+    findOpportunity() {
+        this.router.navigate([ROUTES.listOpportunities]);
+    }
 }
