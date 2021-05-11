@@ -1,0 +1,44 @@
+# compiled output
+ng-torre-front/dist
+ng-torre-front/tmp
+ng-torre-front/out-tsc
+# Only exists if Bazel was run
+ng-torre-front/bazel-out
+
+# dependencies
+ng-torre-front/node_modules
+
+# profiling files
+ng-torre-front/chrome-profiler-events*.json
+ng-torre-front/speed-measure-plugin*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+ng-torre-front/.sass-cache
+ng-torre-front/connect.lock
+ng-torre-front/coverage
+ng-torre-front/libpeerconnection.log
+ng-torre-front/npm-debug.log
+ng-torre-front/yarn-error.log
+ng-torre-front/testem.log
+ng-torre-front/typings
+
+# System Files
+.DS_Store
+Thumbs.db
